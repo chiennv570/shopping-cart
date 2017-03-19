@@ -12,6 +12,7 @@ use yii\behaviors\TimestampBehavior;
  *
  * @property integer $id
  * @property string $name
+ * @property string $slug
  * @property integer $status
  * @property integer $created_at
  * @property integer $updated_at
@@ -44,7 +45,7 @@ class ProductCategory extends \yii\db\ActiveRecord
         return [
             ['name', 'required'],
             [['status', 'created_at', 'updated_at', 'created_by', 'updated_by'], 'integer'],
-            [['name'], 'string', 'max' => 255],
+            [['name', 'slug'], 'string', 'max' => 255],
         ];
     }
 
@@ -55,12 +56,13 @@ class ProductCategory extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'status' => 'Status',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'created_by' => 'Created By',
-            'updated_by' => 'Updated By',
+            'name' => 'Tên nhóm',
+            'slug' => '',
+            'status' => 'Trạng thái',
+            'created_at' => 'Ngày tạo',
+            'updated_at' => 'Ngày sửa',
+            'created_by' => 'Người tạo',
+            'updated_by' => 'Người sửa',
         ];
     }
 

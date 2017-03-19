@@ -17,6 +17,7 @@ use yii\bootstrap\ActiveForm;
     <?php echo $form->errorSummary($model); ?>
 
     <?php echo $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+    <?php echo $form->field($model, 'slug')->textInput() ?>
 
     <?php echo $form->field($model, 'status')->textInput() ?>
 
